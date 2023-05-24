@@ -1,10 +1,10 @@
 <template>
   <h2>App:{{ info }}</h2>
-  <show-info :info="info" @changeInfo="changeInfoName"></show-info>
+  <show-info :info="info" :roInfo="roInfo" @changeInfo="changeInfoName" @changeInfoRo="changeInfoRoName"></show-info>
 </template>
 
 <script>
-import { reactive } from 'vue'
+import { reactive, readonly } from 'vue'
 import ShowInfo from './ShowInfo.vue';
 export default {
   components: { ShowInfo },
@@ -15,10 +15,16 @@ export default {
       age: '18',
     })
 
+    // 使用readonly包裹info
+    const roInfo = readonly(info)
+
     const changeInfoName=(payload)=>{
       info.name = payload
     }
-    return {info,changeInfoName};
+    const changeInfoRoName=(payload)=>{
+      info.name = payload
+    }
+    return {info, changeInfoName, roInfo,changeInfoRoName};
   }
 }
 </script>
