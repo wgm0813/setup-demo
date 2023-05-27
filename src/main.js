@@ -8,6 +8,7 @@ import { createApp } from 'vue'
 // import App from './06_Setup中ref引入元素/App'
 // import App from './07_Setup生命周期函数/App'
 // import App from './08_Setup-Provide-Inject/App'
-import App from './09_Setup侦听数据变化/App'
+// import App from './09_Setup侦听数据变化/App'
+import App from './09_Setup侦听数据变化/App-watchEffect'
 
 createApp(App).mount('#app')
