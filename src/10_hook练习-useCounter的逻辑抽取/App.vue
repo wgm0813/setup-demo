@@ -8,16 +8,36 @@
 
   <hr />
   <hooks-practice></hooks-practice>
+  <hr />
+
+  <button @click="oneClick">标题-1</button>
+  <button @click="twoClick">标题-2</button>
+  <button @click="threeClick">标题-3</button>
 </template>
 
 <script>
 import useCounter from './useCouter';
 import hooksPractice from './hooks-practice.vue'
+import useTitle from './useTitle'
 export default {
   components: { hooksPractice },
   setup() {
+    const title = useTitle('首页')
+
+    function oneClick(){
+      title.value = '标题1'
+    }
+    function twoClick(){
+      title.value = '标题2'
+    }
+    function threeClick(){
+      title.value = '标题3'
+    }
     return {
-      ...useCounter()
+      ...useCounter(),
+      oneClick,
+      twoClick,
+      threeClick
     }
   }
 }
