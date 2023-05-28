@@ -9,7 +9,7 @@ import { createApp } from 'vue'
 // import App from './07_Setup生命周期函数/App'
 // import App from './08_Setup-Provide-Inject/App'
 // import App from './09_Setup侦听数据变化/App'
-// import App from './10_hook练习-useCounter的逻辑抽取/App'
-import App from './11_Setup语法糖/App'
+import App from './10_hook练习-useCounter的逻辑抽取/App'
+// import App from './11_Setup语法糖/App'
 
 createApp(App).mount('#app')

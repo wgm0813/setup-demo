@@ -13,12 +13,30 @@
   <button @click="oneClick">标题-1</button>
   <button @click="twoClick">标题-2</button>
   <button @click="threeClick">标题-3</button>
+  <br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/>
+
 </template>
 
 <script>
 import useCounter from './useCouter';
 import hooksPractice from './hooks-practice.vue'
 import useTitle from './useTitle'
+import useScrollPosition from './useScrollPosition'
 export default {
   components: { hooksPractice },
   setup() {
@@ -33,11 +51,16 @@ export default {
     function threeClick(){
       title.value = '标题3'
     }
+
+    // 当前页面的滚动
+    const {scrollPostion} = useScrollPosition()
+    console.log(scrollPostion.x,scrollPostion.y)
     return {
       ...useCounter(),
       oneClick,
       twoClick,
-      threeClick
+      threeClick,
+      scrollPostion
     }
   }
 }
