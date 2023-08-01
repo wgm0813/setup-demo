@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import { inject } from 'vue'
+import { inject, onMounted } from 'vue'
 export default {
   // methods:{
   //   open(){
@@ -17,8 +17,11 @@ export default {
     }
     const counter = inject('counter')
     const info = inject('info')
+    onMounted(() => {
+      open();
+    })
     return {open,counter,info}
-  }
+  },
 }
 </script>
 
